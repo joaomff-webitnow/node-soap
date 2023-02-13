@@ -324,6 +324,15 @@ export class ClientSSLSecurityPFX implements ISecurity {
     toXML(): string;
 }
 
+export class NTLMSecurity implements ISecurity {
+    constructor(username: string, password: string, domain?: string, workstation?: string) {
+        super(username, password, domain, workstation);
+    }
+    
+    addOptions(options: any): void;
+    toXML(): string;
+}
+
 export function passwordDigest(nonce: string, created: string, password: string): string;
 
 // Below are added for backwards compatibility for previous @types/soap users.
